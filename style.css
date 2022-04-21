@@ -1,0 +1,341 @@
+body{
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    background: #ffc2bb;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.logo-container a{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.logo-container p{
+    margin: 0;
+    font-family: 'Dancing Script';
+    font-size: 30px;
+    color: gray;
+}
+
+.logo-container img{
+    width: 55px;
+}
+
+.menu{
+    display: flex;
+}
+
+.menu-container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-container a{
+    font-family: 'Archivo', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #297373;
+    transition: filter 0.3s;
+}
+
+.menu-container a:hover{
+    filter: opacity(0.5);
+}
+
+.logo-container a:hover{
+    transform: scale(1.1);
+}
+
+main{
+    padding: 30px 10px;
+    background: #f7f7f7;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 10px;
+    font-family: 'Archive', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffc2bb;
+}
+
+h1 img{
+    padding-left: 8px;
+    width: 45px;
+}
+
+.description{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 60px;
+    font-family: 'Archive', sans-serif;
+    font-size: 20px;
+    color: gray;
+}
+
+.pets{
+    display: flex;
+    justify-content: space-evenly; 
+    margin-bottom: 45px; 
+}
+
+.grupo{
+    display: grid;
+    grid-gap: 50px;
+}
+
+.pet {
+    border: 3px solid #297373;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.pet img{
+    width: 400px;
+    height: 273px;
+    object-fit: cover;
+    display: block;
+}
+
+.pet::before {
+    content: "";
+    background: url("./img/svg/logo.svg");
+    width: 85px;
+    height: 85px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 40px;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+    opacity: 0;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,.5));
+    transition: ease .3s;
+}
+
+.pet::after {
+    content: "Saiba mais!";
+    font-family: 'Archivo', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: #ffc2bb;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: inline-table;
+    opacity: 0;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,.5));
+    transition: ease .3s;
+}
+
+.pet:hover .img-container {
+    filter: brightness(0.7) blur(2px);
+}
+
+.pet:hover::before, .pet:hover::after {
+    opacity: 1;
+}
+
+
+footer{
+    background-color: #ffc2bb;
+    height: auto;
+}
+
+.center-box-footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0 40px;
+}
+.icons{
+    display: grid;
+    flex-wrap: wrap;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.icon span{
+    display: flex;
+}
+
+.icon p{
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: gray;
+}
+
+.newsletter p{
+    text-align: center;
+    font-family: 'Archivo', sans-serif;
+    font-size: 20px;
+    color: #297373;
+    max-width: 200px;
+    font-weight: 700;
+}
+
+form{
+    display: grid;
+    gap: 10px;
+}
+
+input{
+    background: none;
+    border: 1px solid white;
+    color: gray;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 5px; 
+}
+
+button{
+    width: 100%;
+    background: #297373;
+    border: none;
+    height: 25px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+
+.copyright {
+    display: flex;
+}
+
+.copyright p{
+    color: gray;
+    font-family: 'Archivo', sans-serif;
+    font-size: 12px;
+    border-top: 1px solid #efefef;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+@media  (max-width: 768px){
+    nav{
+        flex-wrap: nowrap;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    } 
+    .menu-container{
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    .menu-container a{
+        font-size: 18px;
+    }
+    .menu-container a:hover{
+        filter: none;
+    }
+    
+    .logo-container a:hover{
+        transform: none;
+    }
+
+    h1{
+        flex-direction: column-reverse;
+        align-items: center;
+        font-size: 28px;
+        margin: 10px 0;
+    }
+
+    .description{
+        font-size: 13px;
+        margin-bottom: 45px;
+    }
+
+    .pets{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .grupo{
+        grid-gap: 20px;
+    }
+
+    .pet::before {
+        opacity: 1;
+        width: 67px;
+        height: 67px;
+        top: 113px;
+        transition: none;
+    }
+
+    .pet::after {
+        opacity: 1;
+        font-size: 20px;
+        top: 206px;
+        transition: none;
+    }
+
+    .img-container {
+        filter: brightness(0.7);
+    }
+
+    .center-box-footer{
+        display: grid;
+        gap: 25px;
+        padding: 40px 0;
+    }
+
+    .icons{
+        display: grid;
+        justify-items: center;
+    }
+
+    .newsletter{
+        display: grid;
+        justify-items: center;
+    }
+
+    .newsletter p{
+        margin-top: 0;
+    }
+
+    .copyright p{
+       font-size: 9px;
+       height: 40px; 
+    }
+
+    .center-box-footer .logo-container a{
+        justify-content: center;
+    }
+}
